@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import OrderItem from '@components/OrderItem';
 import '@styles/MyOrder.scss';
 import icon from '@icons/flechita.svg'
 import AppContext from '../context/AppContext';
 const MyOrder = () => {
 	const { state } = useContext(AppContext);
+	var total = state.cart.map(item => item.price).reduce((prev, curr) => prev + curr, 0);
 	return (
 		<aside className="MyOrder">
 			<div className="title-container">
@@ -19,7 +20,7 @@ const MyOrder = () => {
 					<p>
 						<span>Total</span>
 					</p>
-					<p>$560.00</p>
+					<p>${total}</p>
 				</div>
 				<button className="primary-button">
 					Checkout
