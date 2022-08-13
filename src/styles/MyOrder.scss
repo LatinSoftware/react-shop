@@ -6,6 +6,8 @@
 	box-sizing: border-box;
 	position: absolute;
 	right: 0;
+	border: 1px solid var(--very-light-pink);
+	bottom: auto;
 }
 .title-container {
 	display: flex;

@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import '@styles/Header.scss';
-
+import MyOrder from '@containers/MyOrder';
 import logo from "@logos/logo_yard_sale.svg";
 import menu from "@icons/icon_menu.svg";
 import shopping_cart from "@icons/icon_shopping_cart.svg";
 import Menu from './Menu';
 const Header = () => {
     const [toggle, setToggle] = useState(false);
+    const [orderToggle, setOrderToggle] = useState(false);
     const handleToggle = () => {
         setToggle(!toggle)
-        console.log("Clicked!!! "+ toggle);
     }
     return (
         <nav>
@@ -40,12 +40,13 @@ const Header = () => {
             <div className="navbar-right">
                 <ul>
                     <li className="navbar-email" onClick={handleToggle} >platzi@example.com</li>
-                    <li className="navbar-shopping-cart">
+                    <li className="navbar-shopping-cart" onClick={() => setOrderToggle(!orderToggle)}>
                         <img src={shopping_cart} alt="shopping cart" />
                         <div>2</div>
                     </li>
                 </ul>
-                {toggle ? <Menu/> : ""}
+                { toggle && <Menu/> }
+                { orderToggle && <MyOrder/>}
             </div>
         </nav>
 
