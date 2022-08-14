@@ -9,7 +9,7 @@
 	border: 1px solid var(--very-light-pink);
 	bottom: auto;
 	background-color: var(--white);
-	transition: all 1s;
+	transition: all 0.3s;
 }
 .navbar-right ul li:hover{
 	cursor: pointer;
@@ -22,6 +22,7 @@
 
 .title-container {
 	display: flex;
+	align-items: baseline;
 }
 .title-container img {
 	transform: rotate(180deg);

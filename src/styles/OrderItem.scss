@@ -6,7 +6,23 @@
 	gap: 16px;
 	margin-bottom: 24px;
 	align-items: center;
+	-webkit-animation-duration: 0.3s;
+	animation-duration: 0.3s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	
+
 }
+.OrderItem--hide{
+	-webkit-animation-name: fadeOut;
+	animation-name: fadeOut;
+	
+}
+@keyframes fadeOut {
+	0% {opacity: 1;}
+	100% {opacity: 0;} 
+} 
+
 .OrderItem figure {
 	margin: 0;
 }

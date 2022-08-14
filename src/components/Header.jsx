@@ -61,7 +61,7 @@ const Header = () => {
                     </li>
                 </ul>
                 { toggle && <Menu/> }
-                { orderToggle && <MyOrder/>}
+                { orderToggle && <MyOrder toggleHandler = {setOrderToggle} />}
             </div>
         </nav>
 

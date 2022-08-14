@@ -5,7 +5,6 @@ import icon from '@icons/bt_add_to_cart.svg';
 const ProductItem = ({product}) => {
 	const {addToCart} = useContext(AppContext);
 	const handleClick = (item) => {
-		console.log("executed!");
 		addToCart(item);
 	}
 	return (
@@ -16,7 +15,7 @@ const ProductItem = ({product}) => {
 					<p>${product.price}</p>
 					<p>{product.title}</p>
 				</div>
-				<figure onClick={() => handleClick(product)} >
+				<figure className='product-info__button-efect' onClick={() => handleClick(product)} >
 					<img src={icon} alt="add to cart icon" />
 				</figure>
 			</div>

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import OrderItem from '@components/OrderItem';
 import '@styles/MyOrder.scss';
 import icon from '@icons/flechita.svg'
@@ -7,8 +7,8 @@ const MyOrder = ({toggleHandler}) => {
 	const { state } = useContext(AppContext);
 	var total = state.cart.map(item => item.price).reduce((prev, curr) => prev + curr, 0);
 	const handleHide = () => {
-		var order = document.getElementsByClassName("MyOrder")[0];
-		order.classList.toggle("hide");
+		// var order = document.getElementsByClassName("MyOrder")[0];
+		// order.classList.toggle("hide");
 		toggleHandler(false);
 	}
 	return (
