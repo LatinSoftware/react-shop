@@ -9,7 +9,17 @@
 	border: 1px solid var(--very-light-pink);
 	bottom: auto;
 	background-color: var(--white);
+	transition: all 1s;
 }
+.navbar-right ul li:hover{
+	cursor: pointer;
+}
+
+.MyOrder.hide {
+	visibility: hidden;
+	opacity: 0;
+}
+
 .title-container {
 	display: flex;
 }
