@@ -6,16 +6,29 @@ import menu from "@icons/icon_menu.svg";
 import shopping_cart from "@icons/icon_shopping_cart.svg";
 import Menu from './Menu';
 import AppContext from '@context/AppContext';
+import MobileMenu from './MobileMenu';
+
 const Header = () => {
     const [toggle, setToggle] = useState(false);
     const [orderToggle, setOrderToggle] = useState(false);
+    const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
     const { state } = useContext(AppContext);
     const handleToggle = () => {
         setToggle(!toggle)
     }
+
+    const openMobileMenu = () =>{
+        if(toggleMobileMenu)
+            document.getElementById("MobileMenu").style.width = "0";
+        else
+            document.getElementById("MobileMenu").style.width = "100%";
+        setToggleMobileMenu(!toggleMobileMenu);
+    }
+
     return (
         <nav>
-            <img src={menu} alt="menu" className="menu" />
+            <img src={menu} alt="menu" className="menu" onClick={openMobileMenu} />
+            <MobileMenu/>
             <div className="navbar-left">
                 <img src={logo} alt="logo" className="logo" />
                 <ul>
