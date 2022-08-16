@@ -5,7 +5,7 @@ import icon from '@icons/flechita.svg'
 import AppContext from '@context/AppContext';
 const MyOrder = ({toggleHandler}) => {
 	const { state } = useContext(AppContext);
-	var total = state.cart.map(item => item.price).reduce((prev, curr) => prev + curr, 0);
+	var total = state.cart.map(item => item.total).reduce((prev, curr) => prev + curr, 0);
 	const handleHide = () => {
 		// var order = document.getElementsByClassName("MyOrder")[0];
 		// order.classList.toggle("hide");

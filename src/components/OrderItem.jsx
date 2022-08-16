@@ -3,7 +3,7 @@ import '@styles/OrderItem.scss';
 import icon from '@icons/icon_close.png';
 import AppContext from '@context/AppContext';
 const OrderItem = ({product}) => {
-	const { title, price, images } = product;
+	const { title, total, images } = product;
 	const { removeToCart } = useContext(AppContext);
 	const deleteProduct = (e) => {
 		const element = e.target.parentElement;
@@ -18,7 +18,7 @@ const OrderItem = ({product}) => {
 				<img src={images[0]} alt={title} />
 			</figure>
 			<p>{title}</p>
-			<p>${price}</p>
+			<p>${total}</p>
 			<img src={icon} alt="close"  onClick={deleteProduct} />
 		</div>
 	);
